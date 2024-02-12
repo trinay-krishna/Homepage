@@ -1,5 +1,16 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/Roboto-Light.woff2') format('woff2'),
+        url('./assets/Roboto-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 html {
     box-sizing: border-box;
+    font-family: 'Roboto';
 }
 
 body {
@@ -9,6 +20,10 @@ body {
 .Aboutme {
     display: flex;
     padding: 30px 25% 0px 25%;
+    background-image: url(./assets/image_2024-02-12_132357224.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
 }
 
 .about {
@@ -79,23 +94,61 @@ body {
 
 .contact {
     margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 0px 20% 0px 14%;
+    padding: 20px 20% 20px 14%;
     font-size: 1.2rem;
     display: flex;
     justify-content: space-between;
     gap: 42px;
+    color: white;
+    background-color: rgb(8,145,178);
     & h2 {
         margin: 0px;
     }
     &>img {
         margin: 0;
     }
+    & p:nth-child(4),p:nth-child(5) {
+        display: flex;
+        gap: 3px;
+        align-items: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .projects {
+        grid-template-columns: repeat(2,1fr);
+    }
 }
 
 @media (max-width: 600px) {
+
+    body {
+        padding: 0px 10px;
+    }
     .Aboutme {
+        flex-direction: column;
+        margin-right: 0px;
+        align-items: center;
+    }
+    .about {
+        min-width: 80vw;
+    }
+    .Work h2 {
+        padding: 3px;
+    }
+    .projects {
+        grid-template-columns: 1fr;
+        padding-left: 8px;
+        padding-right: 0px;
+    }
+    .card {
+        max-width: 90vw;
+    }
+    .contact {
         display: block;
+        padding-left: 10px;
     }
 
 }
+
+
